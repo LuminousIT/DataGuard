@@ -9,15 +9,14 @@
   &__page {
     padding: 30px;
     width: 100%;
-    // border: 1px solid black
 
   }
 }
 
 .sidebar {
   width: 300px;
-  height: 100vh;
-  //   border: 1px solid black;
+  min-height: 100vh;
+  height: 100%;
   padding-top: 30px;
   background-color: $secondary-grey;
   display: flex;
@@ -31,8 +30,11 @@
     padding-left: 22px;
   }
 
+  &__title-bold {
+    font-weight: bold;
+  }
+
   &__navigation {
-    // border: 1px solid black;
     margin-top: 30px;
   }
 
@@ -97,7 +99,6 @@
   &__main {
     display: flex;
     flex-direction: column;
-    // justify-content: space-around;
 
     h3 {
         color: $primary-blue;
@@ -141,5 +142,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: 1px solid black
 }

@@ -11,29 +11,29 @@
         "icon": "icon-marketing",
         "active": [
           "plugin2",
+          "plugin5",
+          "plugin6",
           "plugin4",
-          "plugin5"
+          "plugin1"
         ],
         "disabled": [
           "plugin3"
         ],
-        "inactive": [
-          "plugin1",
-          "plugin6"
-        ]
+        "inactive": []
       },
       "tab2": {
         "title": "Finance",
         "icon": "icon-finance",
         "active": [
-          "plugin10",
           "plugin7",
           "plugin8"
         ],
         "disabled": [
           "plugin9"
         ],
-        "inactive": []
+        "inactive": [
+          "plugin10"
+        ]
       },
       "tab3": {
         "title": "Personnel",

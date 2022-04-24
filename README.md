@@ -1,5 +1,11 @@
 # DataGuard Assessment Test
 
+## Content
+- [Problem Definition](#TASK)
+- [Solution](#solution)
+  - [Problem Assumptions](#assumptions)
+  - [Json-Server](#json-server)
+
 ### TASK 
 - Create User Interface as per the Design on next slides 
 - Create a mock JSON API server for handling GET and POST requests - Retrieve data from that mock server, use it in your components.  

@@ -1,11 +1,12 @@
+const API = "https://stirring-glittery-kicker.glitch.me/data"
 export const fetchAllData = async () => {
-  return await fetch("http://localhost:8080/data")
+  return await fetch(API)
     .then((res) => res.json())
     .then((response) => response);
 };
 
 export const fetchData = async (tab) => {
-  return await fetch("http://localhost:8080/data")
+  return await fetch(API)
     .then((res) => res.json())
     .then((response) => ({
       data: response.tabdata[tab],
@@ -32,7 +33,7 @@ export const updateStatus = async (tabid, id, status) => {
     },
   };
 
-  return await fetch(`http://localhost:8080/data`, {
+  return await fetch(API, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -57,7 +58,7 @@ export const toggleAllPlugin = async (status) => {
       };
     });
 
-    return await fetch(`http://localhost:8080/data`, {
+    return await fetch(API, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

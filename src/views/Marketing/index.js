@@ -5,7 +5,7 @@ import { DataGuardContext } from "../../context/Context";
 import { getTabPluginData } from "../../utilities/utils";
 
 const Marketing = () => {
-    // eslint-disable-next-line
+  // eslint-disable-next-line
   const [state, dispatch] = useContext(DataGuardContext);
   const [data, setData] = useState([]);
 
@@ -16,32 +16,16 @@ const Marketing = () => {
     }
   }, [state]);
 
- 
-//   const getTabPluginDataOrig = (tabData) => {
-//     let pluginData = Object.keys(tabData.data).reduce((prev, curr) => {
-//       if (curr === "active" || curr === "disabled" || curr === "inactive") {
-//         const items = tabData.data[curr].map((item) => ({
-//           item: tabData.plugins[item],
-//           id: item,
-//           status: curr,
-//         }));
-
-//         return [...prev, ...items];
-//       }
-//       return [];
-//     }, []);
-
-//     return pluginData;
-//   };
-
   const toggleState = async (id, status) => {
-    await updateStatus("tab1", id, status)
-
+   
     setData((prevData) => {
       const plugin = prevData.find((plugins) => id === plugins.id);
       plugin.status = status;
       return prevData.map((prev) => (prev.id === id ? plugin : prev));
     });
+
+    await updateStatus("tab1", id, status);
+
   };
 
   return (

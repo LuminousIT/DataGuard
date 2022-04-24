@@ -15,6 +15,6 @@ export const getTabPluginData = (allData, tab) => {
       }
       return [];
     }, []);
-
-    return pluginData;
+    
+    return pluginData.sort((a,b) => a.id.localeCompare(b.id, 'en', {numeric: true}));
   };

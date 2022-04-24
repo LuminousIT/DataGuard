@@ -1,10 +1,9 @@
-import React, { createContext, useReducer, useEffect } from "react";
-import { fetchAllData } from "../api";
+import React, { createContext, useReducer } from "react";
 
 export const DataGuardContext = createContext();
 
 const initialState = {
-  data: null,
+  data: null
 };
 
 const reducer = (state, action) => {
@@ -20,12 +19,6 @@ const reducer = (state, action) => {
 
 export const DataGuardContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  useEffect(() => {
-    fetchAllData().then((response) => {
-      dispatch({ type: "GET_ALL_DATA", payload: response });
-    });
-  }, []);
 
   return (
     <DataGuardContext.Provider value={[state, dispatch]}>

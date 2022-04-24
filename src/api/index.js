@@ -14,7 +14,7 @@ export const fetchData = async (tab) => {
 };
 
 export const updateStatus = async (tabid, id, status) => {
-  const statusOpposite = status == "active" ? "inactive" : "active";
+  const statusOpposite = status === "active" ? "inactive" : "active";
   const allData = await fetchAllData();
   const updatedData = {
     ...allData,

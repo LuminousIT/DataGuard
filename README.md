@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# DataGuard Assessment Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### TASK 
+- Create User Interface as per the Design on next slides 
+- Create a mock JSON API server for handling GET and POST requests - Retrieve data from that mock server, use it in your components.  
+- Make sure the Toggle Switches are working with the API. 
+- Ensure the overall Power Switch disables all the plugins in all the tabs as per the Design. - Switching between Tabs, should change the URL
 
-## Available Scripts
+### DELIVERABLE 
+- Deploy your submission on heroku/netlify and share the link. 
+- Share a link to your code from github/bitbucket whichever works fine for you.
 
-In the project directory, you can run:
+### DATA SOURCE 
+[https://dataguard.blob.core.windows.net/challenges/plugins/fe-challenge.json](https://dataguard.blob.core.windows.net/challenges/plugins/fe-challenge.json)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### SAMPLE
+![Sample](./src/assets/images/sample.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# SOLUTION
 
-### `npm test`
+### ASSUMPTIONS
+To solve this challenge, I had to make some basic assumptions to guide the development as there was limited information into the intrincasies. Some of which include: 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- I assume I'm supposed to maintain the schema of the datasource in my server. 
+- I assume the tabs list is not growing. That is there would be at most 3 tabs as exist in the given design i.e Marketing, Fincance, Personnel
+- I assume the plugin for each tab are the default plugins in the given [datasource](https://dataguard.blob.core.windows.net/challenges/plugins/fe-challenge.json) active, inactive and disabled property. That is,
+  - Marketing: plugin1, plugin2, plugin3, plugin4, plugin5, plugin6
+  - Finance: plugin7, plugin8, plugin9, plugin10
+  - Personnel: plugin11, plugin12, plugin13
+- I assume the states represents:
+  - Active State: When toggle is checked (Allowed).
+  - Inactive State: when toggle is unchecked (Blocked).
+  - Disabled State: when card is opaque and toggle button disabled (Disabled).
+- I assume the overall Power switch when **active** moves **all plugins** in each tab to the **active state**.
+- I assume the overall Power switch when **inactive** moves **all plugins** in each tab to the **inactive state**.
+- I assume all POST and GET request to the server must maintain the given datasource schema.
 
-### `npm run build`
+### Json-Server
+JSON-Server is hosted on [Glitch](https://glitch.com/edit/#!/stirring-glittery-kicker?path=README.md%3A1%3A0) so it can be accessed remotely when project is hosted on netlify / heroku.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The remote sever url is [https://stirring-glittery-kicker.glitch.me/data](https://stirring-glittery-kicker.glitch.me/data)

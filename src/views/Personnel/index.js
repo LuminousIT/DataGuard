@@ -1,13 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
-import { updateStatus } from "../../api";
+import { fetchAllData, updateStatus } from "../../api";
 import Card from "../../components/Card";
 import { DataGuardContext } from "../../context/Context";
 import { getTabPluginData } from "../../utilities/utils";
 
 const Personnel = () => {
-  // eslint-disable-next-line
   const [state, dispatch] = useContext(DataGuardContext);
   const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchAllData().then((response) => {
+      dispatch({ type: "GET_ALL_DATA", payload: response });
+    });
+    // eslint-disable-next-line
+  }, []);
 
   useEffect(() => {
     if (state.data !== null) {
@@ -26,7 +32,7 @@ const Personnel = () => {
     });
   };
 
-  if (data.length === 0) return <div className="loader">Loading...</div>
+  if (data.length === 0) return <div className="loader">Loading...</div>;
 
   return (
     <div>

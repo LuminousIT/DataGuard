@@ -9,9 +9,9 @@ const Card = ({ title, description, status, handleToggleStatus, id }) => {
       </div>
       <div className="card__aside">
         <ToggleSwitch
-          handleToggle={(e) =>
-            handleToggleStatus(id, e.target.checked ? "inactive" : "active")
-          }
+          handleToggle={(e) => {
+            handleToggleStatus(id, e.target.value === "active" ? "inactive" : "active");
+          }}
           status={status}
         />
         <p

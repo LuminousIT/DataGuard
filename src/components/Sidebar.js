@@ -11,6 +11,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     if (state.data !== null) {
+      // assume all plugins are inactive if tab1 active.isEmpty
       if (state.data.tabdata.tab1.active.length === 0)
         setPluginStatus("inactive");
       else setPluginStatus("active");

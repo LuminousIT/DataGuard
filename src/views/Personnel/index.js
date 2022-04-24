@@ -26,6 +26,8 @@ const Personnel = () => {
     });
   };
 
+  if (data.length === 0) return <div className="loader">Loading...</div>
+
   return (
     <div>
       <p className="page__title">Personnel Plugins</p>

@@ -6,8 +6,9 @@ const ToggleSwitch = ({ handleToggle, status }) => {
     <div>
       <label className="switch">
         <input
-          disabled={status === "disabled" && status}
+          disabled={status === "disabled"}
           type="checkbox"
+          value={status}
           onChange={handleToggle}
         />
         <span
